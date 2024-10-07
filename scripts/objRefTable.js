@@ -21,7 +21,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.Mouse.Cnds.OnClick,
-		C3.Plugins.Touch.Cnds.OnTouchStart,
+		C3.Plugins.Touch.Cnds.IsInTouch,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Sprite.Acts.RotateClockwise,
 		C3.Plugins.System.Exps.dt,
