@@ -20,13 +20,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Cnds.CompareBoolVar,
-		C3.Plugins.Mouse.Cnds.OnClick,
+		C3.Plugins.Touch.Cnds.OnTouchStart,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Sprite.Acts.RotateClockwise,
 		C3.Plugins.System.Exps.dt,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.Sprite.Cnds.OnCollision,
-		C3.Plugins.Touch.Cnds.OnTouchStart,
 		C3.Plugins.TiledBg.Cnds.CompareX,
 		C3.Plugins.TiledBg.Acts.SetX,
 		C3.Plugins.System.Acts.AddVar,
@@ -48,12 +47,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Platform.Acts.SetGravity,
 		C3.Behaviors.Fade.Acts.StartFade,
 		C3.Behaviors.Sin.Acts.SetEnabled,
-		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.System.Acts.RestartLayout,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Cnds.Else,
-		C3.Plugins.Mouse.Cnds.IsOverObject
+		C3.Plugins.Mouse.Cnds.IsOverObject,
+		C3.Plugins.Mouse.Cnds.OnObjectClicked
 	];
 };
 self.C3_JsPropNameTable = [
