@@ -4939,6 +4939,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "",
 		() => "Fonksiyonlar",
+		() => -15,
 		() => -150,
 		() => 320,
 		() => "kanatçırpma",
