@@ -333,6 +333,12 @@ const fftSize=this._node["fftSize"];this._peak=0;let rmsSquaredSum=0;for(let i=0
 "peak":this._peak,"rms":this._rms,"binCount":this._node["frequencyBinCount"],"freqBins":this._freqBins}}}};
 
 
+// scripts/plugins/Touch/dom/domSide.js
+'use strict';{const DOM_COMPONENT_ID="touch";const HANDLER_CLASS=class TouchDOMHandler extends self.DOMHandler{constructor(iRuntime){super(iRuntime,DOM_COMPONENT_ID);this.AddRuntimeMessageHandler("request-permission",e=>this._OnRequestPermission(e))}async _OnRequestPermission(e){const type=e["type"];let result=true;if(type===0)result=await this._RequestOrientationPermission();else if(type===1)result=await this._RequestMotionPermission();this.PostToRuntime("permission-result",{"type":type,"result":result})}async _RequestOrientationPermission(){if(!self["DeviceOrientationEvent"]||
+!self["DeviceOrientationEvent"]["requestPermission"])return true;try{const state=await self["DeviceOrientationEvent"]["requestPermission"]();return state==="granted"}catch(err){console.warn("[Touch] Failed to request orientation permission: ",err);return false}}async _RequestMotionPermission(){if(!self["DeviceMotionEvent"]||!self["DeviceMotionEvent"]["requestPermission"])return true;try{const state=await self["DeviceMotionEvent"]["requestPermission"]();return state==="granted"}catch(err){console.warn("[Touch] Failed to request motion permission: ",
+err);return false}}};self.RuntimeInterface.AddDOMHandlerClass(HANDLER_CLASS)};
+
+
 // start-export.js
 'use strict';{if(window["C3_Is_Supported"]){const enableWorker=true;window["c3_runtimeInterface"]=new self.RuntimeInterface({useWorker:enableWorker,workerMainUrl:"workermain.js",runtimeScriptList:["scripts/c3main.js"],scriptFolder:"scripts/",exportType:"html5"})}};
 
